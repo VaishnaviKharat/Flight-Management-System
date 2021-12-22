@@ -5,6 +5,7 @@ import HeaderComponent from './components/HeaderComponent';
 import ListFlightComponent from './components/ListFlightComponent';
 import FooterComponent from './components/FooterComponents';
 import CreateFlightComponent from './components/CreateFlightComponent';
+import ViewFlightComponent from './components/ViewFlightComponent';
 
 
 function App() {
@@ -16,7 +17,11 @@ function App() {
                 <Switch>
                   <Route path = "/" exact component = {ListFlightComponent}></Route> 
                   <Route path = "/Flights" component = {ListFlightComponent}></Route>
-                  <Route path = "/add-flight" component = {CreateFlightComponent}></Route>
+                  <Route path = "/add-flight/:id" component = {CreateFlightComponent}></Route>
+                  <Route path = "/view-flight/:id" component = {ViewFlightComponent}></Route>
+
+                  {/* <Route path = "/update-flight/:id" component = {UpdateFlightComponent}></Route> */}
+
                 </Switch>
             </div>
           <FooterComponent/>
