@@ -19,44 +19,66 @@ public class Flight {
 	private String destination;
 	
 	@Column(name = "arrival_time")
-	private double arrival_time;
+	private String arrival_time;
 	
 	@Column(name = "departure_time")
-	private double departure_time;
+	private String departure_time;
 	
+	@Column(name = "gate_No")
+	private long gateNo;
+	
+	public long getGateNo() {
+		return gateNo;
+	}
+
+	public void setGateNo(long gateNo) {
+		this.gateNo = gateNo;
+	}
+
+	//default Constructor
 	public Flight() {
 		
 	}
-	public Flight(double arrival_time, double departure_time, String destination) {
-		super();
-		this.arrival_time = arrival_time;
-		this.departure_time = departure_time;
-		this.destination = destination;
-	}
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	public double getArrival_time() {
-		return arrival_time;
-	}
-	public void setArrival_time(double arrival_time) {
-		this.arrival_time = arrival_time;
-	}
-	public double getDeparture_time() {
-		return departure_time;
-	}
-	public void setDeparture_time(double departure_time) {
-		this.departure_time = departure_time;
-	}
+
 	public String getDestination() {
 		return destination;
 	}
+
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
 
+	public String getArrival_time() {
+		return arrival_time;
+	}
+
+	public void setArrival_time(String arrival_time) {
+		this.arrival_time = arrival_time;
+	}
+
+	public String getDeparture_time() {
+		return departure_time;
+	}
+
+	public void setDeparture_time(String departure_time) {
+		this.departure_time = departure_time;
+	}
+
+	public Flight(String destination, String arrival_time, String departure_time) {
+		super();
+		this.destination = destination;
+		this.arrival_time = arrival_time;
+		this.departure_time = departure_time;
+	}
+	
+	//parameterized Constructor
 	
 }
