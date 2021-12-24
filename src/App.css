@@ -25,7 +25,7 @@
 } */
 
 .App-header {
-  background-image: url(./imgs/man.png);
+  background-image: url(./imgs/image.png);
   background-size: 'stretch';
   background-position: 'center center';
   background-repeat: 'no-repeat';
@@ -39,6 +39,7 @@
 }
 
 .container {
+  background-image: url(./imgs/image.png);
   background-color: rgb(252, 253, 253);
   background-size: 'cover';
   background-position: 'center center';
@@ -49,6 +50,19 @@
   color: rgb(0, 0, 0);
 }
 
+table.table-bordered{
+  border:1px solid rgb(6, 6, 8);
+  border-width: thick;
+  margin-top:20px;
+ 
+}
+/* table.table-bordered > tbody > tr > td{
+  border:1px solid rgb(5, 5, 5);
+} */
+
+table, th, td {
+  border: 1px solid black;
+}
 .App-link {
   color: #61dafb;
 }

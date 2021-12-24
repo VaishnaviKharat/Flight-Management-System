@@ -44,10 +44,13 @@ class ListFlightComponent extends Component {
                  </div>
                  <br></br>
                  <div className = "row">
-                        <table className = "table table-striped table-bordered">
-
-                            <thead>
-                                <tr>
+                        <table className = "table align-items-center table-flush "
+                        stripped bordered hover size="sm"
+                        style={{"borderWidth":"4px", 'borderColor':"#000000", 'borderStyle':'solid'}
+                       
+                       }>
+                            <thead className='thead light'>
+                                <tr borderWidth="10px">
                                     <th>ID</th>
                                     <th> Flight Arrival Time</th>
                                     <th> Flight Departure Time</th>
