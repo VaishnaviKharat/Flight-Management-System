@@ -1,7 +1,13 @@
-import axios from 'axios';
+
 const FLIGHT_API_BASE_URL = "http://localhost:8080/api/v1/flights";
+const LOGIN_API_BASE_URL = "http://localhost:8080/api/v1/login";
 
 class FlightService {
+
+    adminLogin(login){
+        return axios.post(LOGIN_API_BASE_URL,login)
+    }
+
     getFlights(){
         return axios.get(FLIGHT_API_BASE_URL);
     }
