@@ -3,6 +3,7 @@ package com.project.springboot.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.springboot.exception.ResourceNotFoundException;
 import com.project.springboot.model.Flight;
-
+import com.project.springboot.model.Login;
 import com.project.springboot.repository.FlightsRepository;
+import com.project.springboot.repository.LoginRepository;
 
 
 @CrossOrigin
@@ -29,6 +31,26 @@ public class FlightController {
 
 	@Autowired
 	private FlightsRepository flightsRepository;
+	
+	@Autowired
+	private LoginRepository loginRepository;
+	
+	@GetMapping("/login")
+	public List<Login> getAllLogin(){
+		return loginRepository.findAll();
+	}
+	
+	@PostMapping("/login")
+	public String login(@RequestBody Login login) {
+//		 loginrepo.findByUsernameAndPassword(login.getUsername(), login.getPassword());
+		Login oathuser=loginRepository.findByUsernameAndPassword(login.getUsername(), login.getPassword());
+		if(Objects.nonNull(oathuser)) {
+			return "redirect:/flights";
+		}
+		else {
+			return "redirect:/";
+		}
+	}
 	
 	//get all flights
 	@GetMapping("/flights")
