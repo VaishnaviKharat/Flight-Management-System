@@ -37,8 +37,9 @@ class ListFlightComponent extends Component {
     render() {
         return (
             <div>
+                   
                  <h2 className="text-center">Flights List</h2>
-                 <div className = "row">
+                 <div>
                     <button className="btn btn-primary" onClick={this.addFlight}> Add Flight</button>
                  </div>
                  <br></br>
