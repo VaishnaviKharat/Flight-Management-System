@@ -76,9 +76,9 @@ class CreateFlightComponent extends Component {
 
     getTitle(){
         if(this.state.id === '_add'){
-            return <h3 className="text-center">Add Flight</h3>
+            return <h3 className="text-center">Add Flight Details</h3>
         }else{
-            return <h3 className="text-center">Update Flight</h3>
+            return <h3 className="text-center">Update Flight Details</h3>
         }
     }
 
