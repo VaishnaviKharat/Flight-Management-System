@@ -7,6 +7,7 @@ import FooterComponent from './components/FooterComponents';
 import CreateFlightComponent from './components/CreateFlightComponent';
 import ViewFlightComponent from './components/ViewFlightComponent';
 import Login from './components/Login';
+import  Logout  from './components/logout';
 
 
 function App() {
@@ -18,11 +19,11 @@ function App() {
              
                 <Switch>
                   <Route path = "/"  exact component = {Login}></Route>
-                  
+                  <Route path = "/logout"  component = {Logout}></Route>
                   <Route path = "/Flights" component = {ListFlightComponent}></Route>
                   <Route path = "/add-flight/:id" component = {CreateFlightComponent}></Route>
                   <Route path = "/view-flight/:id" component = {ViewFlightComponent}></Route>
-
+                 
 
                 </Switch>
             </div>

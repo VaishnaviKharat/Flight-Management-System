@@ -27,7 +27,7 @@ class ViewFlightComponent extends Component {
                     <div className = "card-body">
                         <div className = "row">
                             <label> Flight Arrival Time: </label>
-                            <div> { this.state.flight.arrival_time }</div>
+                            <div>{ this.state.flight.arrival_time }</div>
                         </div>
                         <div className = "row">
                             <label> Flight Departure Time: </label>

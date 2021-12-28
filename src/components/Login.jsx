@@ -9,10 +9,10 @@ class Login extends React.Component{
     constructor(props){
       // const token=localStorage.getItem('token')
       let authorized=false;
-      let response="";
      
         super(props)
-        this.state={id:this.props.match.params.id , 
+        this.state={
+            id:this.props.match.params.id , 
             username:"",
             password:"", 
             authorized}
@@ -26,43 +26,38 @@ class Login extends React.Component{
       this.setState({password:event.target.value})
     }
 
-   
-    
     login(event){
       event.preventDefault();
-      if (this.state.id==="username"){
+      // console.log(this.state.username)
+      // console.log(this.state.password)
+      if (this.state.username==="admin")
+      
+      {
         let loginData={username:this.state.username,password:this.state.password}
-        FlightService.adminLogin(loginData).then(res=>{
-          console.log(res.data.data)
-          response = res.data
-          console.data(response.data)
-          if (res.data==='redirect:/flights'){
+        FlightService.getUserByUsername(loginData).then(res=>{
+          console.log(res)
+          console.log("----------admin---------")
             this.setState({authorized:true})
             
-            // localStorage.setItem('token',Date.now())
+            localStorage.setItem('token',Date.now())
+          
             this.props.history.push('/flights')
-          }
-          else{
-            alert("Invalid Credentials!!")      
-            this.setState({authorized:false})
-            this.props.history.push('/flights')
-
-          }  
         })
-      }
+      }  
+    
       
-      else{   
+        else{
+          console.log("----------Invalid User---------")
+          this.setState({authorized:false})
         let loginData={username:this.state.username,password:this.state.password}
         FlightService.getLogin(loginData).then(res=>{
-        console.log(res)
-        if (res.data===0){
-          alert("Invalid Credentials!!");
-          this.props.history.push('/login/flights');
-        }
-        else{
+        //console.log(res)
+        
+        
           localStorage.setItem(`${this.state.username}`,Date.now());
-          this.props.history.push(`/flights`)
-        }
+          alert("Invalid Credentials!!");
+          this.props.history.push(`/`);
+        
       })
     }}
  
@@ -87,5 +82,6 @@ class Login extends React.Component{
 }
 
 export default Login
+
 
 

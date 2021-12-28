@@ -33,20 +33,22 @@ class ListFlightComponent extends Component {
     addFlight(){
         this.props.history.push('/add-flight/_add');
     }
-
+ 
+       
+    
     render() {
         return (
             <div>
                    
                  <h2 className="text-center">Flights List</h2>
                  <div>
-                    <button className="btn btn-primary" onClick={this.addFlight}> Add Flight</button>
+                    <button className="btn btn-dark" onClick={this.addFlight}> Add Flight</button>
                  </div>
                  <br></br>
                  <div className = "row">
                         <table className = "table align-items-center table-flush "
-                        stripped bordered hover size="sm"
-                        style={{"borderWidth":"4px", 'borderColor':"#000000", 'borderStyle':'solid'}
+                         className ="table table-bordered"
+                        style={{"borderwidth":"4px", 'borderColor':"#000000", 'borderStyle':'solid'}
                        
                        }>
                             <thead className='thead light'>
@@ -64,13 +66,13 @@ class ListFlightComponent extends Component {
                                     this.state.flights.map(
                                         flight => 
                                         <tr key = {flight.id}>
-                                            <td> {flight.id }</td> 
-                                             <td> {flight.arrival_time} </td>   
-                                             <td> {flight.departure_time}</td>
-                                             <td> {flight.destination} </td>
-                                             <td> {flight.gateNo}</td>
+                                            <td><b> {flight.id }</b></td> 
+                                             <td><b>{flight.arrival_time}</b>  </td>   
+                                             <td> <b>{flight.departure_time}</b></td>
+                                             <td> <b>{flight.destination}</b> </td>
+                                             <td> <b>{flight.gateNo}</b></td>
                                              <td>
-                                                 <button onClick={ () => this.editFlight(flight.id)} className="btn btn-info">Update</button>
+                                                 <button onClick={ () => this.editFlight(flight.id)} className="btn btn-secondary">Update</button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteFlight(flight.id)} className="btn btn-danger">Delete </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.viewflight(flight.id)} className="btn btn-info">View </button>
                                              </td>
@@ -79,10 +81,13 @@ class ListFlightComponent extends Component {
                                 }
                             </tbody>
                         </table>
-
+                        <div>
+                            <button className="btn-lg btn-dark btn-block text-center" onClick={()=> this.props.history.push('/logout')}>Logout</button>
+                        </div>    
                  </div>
-
+                 
             </div>
+            
         )
     }
 }
