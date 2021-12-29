@@ -39,6 +39,14 @@ public class Flight {
 	public Flight() {
 		
 	}
+	
+	//parameterized Constructor
+	public Flight(String destination, String arrival_time, String departure_time) {
+			super();
+			this.destination = destination;
+			this.arrival_time = arrival_time;
+			this.departure_time = departure_time;
+	}
 
 	public long getId() {
 		return id;
@@ -70,15 +78,6 @@ public class Flight {
 
 	public void setDeparture_time(String departure_time) {
 		this.departure_time = departure_time;
-	}
-
-	public Flight(String destination, String arrival_time, String departure_time) {
-		super();
-		this.destination = destination;
-		this.arrival_time = arrival_time;
-		this.departure_time = departure_time;
-	}
-	
-	//parameterized Constructor
+	}	
 	
 }

@@ -66,7 +66,7 @@ public class FlightController {
 		return flightsRepository.save(flight);
 	}
 	
-	//get Employee by id rest api
+	//get flight by id rest api
 	@GetMapping("/flights/{id}")
 	public ResponseEntity<Flight> getFlightId(@PathVariable Long id) {
 		
@@ -92,7 +92,7 @@ public class FlightController {
 		
 	}
 	
-	//delete employee rest api
+	//delete flight rest api
 	@DeleteMapping("/flights/{id}")
 	public ResponseEntity<Map<String , Boolean>> deleteFlight(@PathVariable Long id){
 		Flight flight = flightsRepository.findById(id)
